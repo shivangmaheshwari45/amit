@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    --big-colour: #000;
+    --snd-bg-color: #111;
+    --txt-color: #1023eb;
+    --main-color: #64ebc0c1;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 8%;
+    background: linear-gradient(135deg, #111, #000);
+    min-height: 100vh;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+/* Image section */
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+.about-img img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 35px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Minimal 3D hover effect on image */
+.about-img:hover img {
+    transform: translateY(-10px) scale(1.05) rotateY(6deg) rotateX(3deg);
+    box-shadow: 0 15px 35px rgba(100, 235, 192, 0.4);
+}
+
+/* Content section */
+.about-content {
+    flex: 1;
+    transition: transform 0.5s ease;
+}
+
+/* Minimal 3D hover effect on content */
+.about-content:hover {
+    transform: translateY(-8px) scale(1.03) rotateX(2deg);
+}
+
+.about-content h3 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    transform: translateZ(10px);
+}
+
+.about-content p {
+    font-size: 1.8rem;
+    color: #ddd;
+    line-height: 1.8;
+    transform: translateZ(8px);
+}
+
+/* "Book a Free Trial Class" Button */
+.about-content .trial-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #64ebc0, #1de2a0);
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(100, 235, 192, 0.5);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateZ(15px);
+    text-align: center;
+}
+
+/* Hover effect: glow + 3D lift */
+.about-content .trial-btn:hover {
+    transform: translateY(-8px) scale(1.05) translateZ(20px);
+    box-shadow: 0 12px 30px rgba(100, 235, 192, 0.7), 0 0 15px rgba(100, 235, 192, 0.5);
+    background: linear-gradient(45deg, #1de2a0, #64ebc0);
+}
+
+/* Subtle floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateZ(15px); }
+    50% { transform: translateY(-5px) translateZ(15px); }
+}
+
+.about-content .trial-btn {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-img img {
+        width: 400px;
+        height: 400px;
+    }
+    .about-content h3 {
+        font-size: 2.5rem;
+    }
+    .about-content p {
+        font-size: 1.5rem;
+    }
+    .about-content .trial-btn {
+        font-size: 1.6rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .about-img img {
+        width: 300px;
+        height: 300px;
+    }
+    .about-content h3 {
+        font-size: 2rem;
+    }
+    .about-content p {
+        font-size: 1.3rem;
+    }
+    .about-content .trial-btn {
+        font-size: 1.4rem;
+        padding: 10px 20px;
+    }
+}

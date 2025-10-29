@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    --big-colour: #000;
+    --snd-bg-color: #111;
+    --txt-color: #1023eb;
+    --main-color: #64ebc0c1;
+}
+
+.plans {
+  width: 100%;                 /* full width */
+  min-height: 100vh;           /* full screen height */
+  background: linear-gradient(135deg, #111, #000); /* smooth gradient */
+  color: #fff;
+  padding: 80px 20px;          /* balanced spacing */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* center vertically */
+}
+
+.plans .heading {
+  font-size: 3.5rem;
+  margin-bottom: 50px;
+  perspective: 1000px; /* for 3D effect */
+}
+
+.plans .heading span {
+  color: #64ebc0;         
+}
+
+/* Plans container */
+.plans-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+/* Each plan box */
+.plans-box {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Subtle 3D hover */
+.plans-box:hover {
+  transform: translateY(-12px) scale(1.06) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(100, 235, 192, 0.3);
+}
+
+/* Title */
+.plans-box h3 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #64ebc0;
+  transform: translateZ(20px);
+}
+
+.plans-box h2 {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+  transform: translateZ(15px);
+}
+
+.plans-box h2 span {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* Features */
+.plans-box ul {
+  margin-bottom: 18px;
+}
+
+.plans-box li {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #ddd;
+  transform: translateZ(10px);
+}
+
+/* Button */
+.plans-box .btn {
+  display: inline-block;
+  padding: 14px 26px;
+  background: #64ebc0;
+  color: #000;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  transform: translateZ(25px);
+  box-shadow: 0 4px 15px rgba(100, 235, 192, 0.5);
+}
+
+.plans-box .btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 6px 20px rgba(255,255,255,0.5);
+}

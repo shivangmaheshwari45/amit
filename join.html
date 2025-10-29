@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIN US</title>
+    <link rel="stylesheet" href="join.css">
+</head>
+<body>
+    <form action="/submit.php">
+        <h1>Join Us</h1>
+            <div>
+        <label for="name">First name</label>
+        <input type="text" placeholder="Enter First name" required>
+        <br>
+        <label for="name">Last name</label>
+        <input type="text" placeholder="Enter Last name" required>
+    </div>
+<br>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="phone" placeholder="Enter Phone" maxlength="10" required>
+    </div>
+    <br>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter Email" required>
+    </div>
+    <br>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter password" required>
+    </div>
+    <br>
+    <div>
+        <label for="dob">Date of birth</label>
+        <input id="dob" type="Date" required>
+    </div>
+    <br>
+    <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="other">other</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <p>Subscription Plan</p>
+        <input id="basic" type="radio" name="subscription" value="basic">
+        <label for="basic">Basic</label>
+
+        <input id="standard" type="radio" name="subscription" value="standard">
+        <label for="standard">Standard</label>
+
+        <input id="premium" type="radio" name="subscription" value="premium">
+        <label for="premium">Premium</label>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button type="submit">Register</button>
+    </div>
+    </form>
+</body>
+</html>

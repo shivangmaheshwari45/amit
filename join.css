@@ -1,0 +1,134 @@
+
+/* Reset & basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #000, #0d1f40); /* Black to dark blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: #64ebc0; /* Sky blue */
+    text-shadow: 1px 1px 5px rgba(100,235,192,0.5);
+}
+
+/* Form container */
+form {
+    background: #111;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    perspective: 1000px; /* For 3D hover */
+}
+
+/* Minimal 3D hover effect on form */
+form:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(100, 235, 192, 0.4);
+}
+
+/* Form fields */
+form div {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: #64ebc0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+input[type="text"],
+input[type="phone"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #64ebc0;
+    background: #111;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="phone"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border: 2px solid #1de2a0;
+    box-shadow: 0 0 10px #64ebc0;
+    transform: translateZ(3px); /* slight 3D pop */
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    margin-right: 0.3rem;
+    accent-color: #64ebc0;
+}
+
+label[for="basic"],
+label[for="premium"],
+label[for="VIP"] {
+    margin-right: 1rem;
+}
+
+/* Submit button */
+button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(45deg, #64ebc0, #1de2a0);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(100, 235, 192, 0.5);
+    border: none;
+    transform: translateZ(5px);
+}
+
+/* Hover effect: 3D lift + glow */
+button[type="submit"]:hover {
+    transform: translateY(-6px) scale(1.05) translateZ(10px);
+    box-shadow: 0 12px 35px rgba(100, 235, 192, 0.7), 0 0 15px rgba(100, 235, 192, 0.5);
+    background: linear-gradient(45deg, #1de2a0, #64ebc0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+        text-align: center;
+    }
+}
