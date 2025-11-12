@@ -137,5 +137,101 @@ span {
     border-radius: 1rem;
 }
 
+ div a {
+    display: inline-block;
+    text-decoration: none;
+    color: #00c8a0; /* mint green text */
+    border: 2px solid #00c8a0;
+    padding: 10px 40px;
+    border-radius: 10px; /* slightly rounded corners */
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    background: transparent;
+    box-shadow: 0 0 8px rgba(146, 245, 225, 0.4);
+}
 
-/* Services Section */
+/* Hover effect */
+div a:hover {
+    background: #7efae1;
+    color: #000;
+    box-shadow: 0 0 15px rgba(127, 250, 225, 0.7);
+    transform: scale(1.05);
+}
+
+/* Active click */
+div a:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 10px rgba(137, 248, 226, 0.5);
+}
+
+/* footer Section */
+
+    body {
+
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 60px 0;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 120px; /* space between boxes */
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-box img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .stat-title {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #ffffffcc;
+      margin: 5px 0;
+    }
+
+    .stat-value {
+      font-size: 70px;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .stat-unit {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-container {
+        gap: 60px;
+      }
+
+      .stat-value {
+        font-size: 50px;
+      }
+
+      .stat-unit {
+        font-size: 16px;
+      }
+    }
+

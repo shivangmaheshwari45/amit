@@ -1,134 +1,139 @@
-
-/* Reset & basic styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, sans-serif;
-}
-
-body {
-    background: linear-gradient(135deg, #000, #0d1f40); /* Black to dark blue gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #fff;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 3rem;
-    color: #64ebc0; /* Sky blue */
-    text-shadow: 1px 1px 5px rgba(100,235,192,0.5);
-}
-
-/* Form container */
-form {
-    background: #111;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-    max-width: 500px;
-    width: 100%;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    perspective: 1000px; /* For 3D hover */
-}
-
-/* Minimal 3D hover effect on form */
-form:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(100, 235, 192, 0.4);
-}
-
-/* Form fields */
-form div {
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 0.5rem;
-    color: #64ebc0;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-input[type="text"],
-input[type="phone"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-select {
-    padding: 12px 15px;
-    border-radius: 10px;
-    border: 1px solid #64ebc0;
-    background: #111;
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="phone"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-select:focus {
-    outline: none;
-    border: 2px solid #1de2a0;
-    box-shadow: 0 0 10px #64ebc0;
-    transform: translateZ(3px); /* slight 3D pop */
-}
-
-/* Radio buttons */
-input[type="radio"] {
-    margin-right: 0.3rem;
-    accent-color: #64ebc0;
-}
-
-label[for="basic"],
-label[for="premium"],
-label[for="VIP"] {
-    margin-right: 1rem;
-}
-
-/* Submit button */
-button[type="submit"] {
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #000;
-    background: linear-gradient(45deg, #64ebc0, #1de2a0);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(100, 235, 192, 0.5);
-    border: none;
-    transform: translateZ(5px);
-}
-
-/* Hover effect: 3D lift + glow */
-button[type="submit"]:hover {
-    transform: translateY(-6px) scale(1.05) translateZ(10px);
-    box-shadow: 0 12px 35px rgba(100, 235, 192, 0.7), 0 0 15px rgba(100, 235, 192, 0.5);
-    background: linear-gradient(45deg, #1de2a0, #64ebc0);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    form {
-        padding: 30px 20px;
+/* Page layout */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+        overflow: hidden; /* 👈 prevents scrolling */
+        flex-direction: column;
     }
 
+    /* Top Heading */
     h1 {
-        font-size: 2.2rem;
-    }
-    
-    button[type="submit"] {
-        width: 100%;
+        margin: 20px 0 10px 0;
+        font-size: 28px;
+        color: #fff;
+        font-weight: 700;
+        white-space: nowrap; /* 👈 keeps heading in one line */
         text-align: center;
+        letter-spacing: 0px;
     }
-}
+
+    /* Login prompt text */
+    p {
+        font-size: 15px;
+        color: #f8f8f8;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    p a {
+        color: #ffb6c1;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+
+    /* Centered form card */
+    form {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 25px 35px;
+        width: 350px;
+        color: #fff;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: left;
+        overflow: hidden;
+    }
+
+    /* Label styling */
+    label {
+        display: block;
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 4px;
+        color: #f0f0f0;
+    }
+
+    /* Input & select fields */
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.25);
+        color: #140d0d;
+        font-size: 14px;
+        margin-bottom: 10px;
+        transition: 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    input::placeholder {
+        color: #2a2121;
+    }
+
+    input:focus, select:focus {
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Subscription section */
+    .subscription-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .subscription-options label {
+        margin: 0;
+        font-weight: 500;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    .subscription-options input[type="radio"] {
+        width: auto;
+        accent-color: #ffb347;
+        margin-right: 4px;
+    }
+
+    /* Register button */
+    button {
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(90deg, #ff758c, #ff7eb3);
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: linear-gradient(90deg, #ff7eb3, #ff758c);
+        transform: scale(1.02);
+    }
+
+    /* Responsive tweak */
+    @media (max-height: 600px) {
+        form {
+            transform: scale(0.9);
+        }
+    }

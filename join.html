@@ -8,35 +8,33 @@
 </head>
 <body>
     <form action="/submit.php">
-        <h1>Join Us</h1>
+        <h1>Welcome to MapMyFitness</h1>
+        <p>Already a member? <a href="login.html">Log ln</a></p>
             <div>
-        <label for="name">First name</label>
-        <input type="text" placeholder="Enter First name" required>
-        <br>
-        <label for="name">Last name</label>
-        <input type="text" placeholder="Enter Last name" required>
+        <label for="Name"> Name</label>
+        <input type="text" placeholder="Enter name" required>
     </div>
-<br>
+
     <div>
-        <label for="phone">Phone</label>
+        <label for="Phone">Phone</label>
         <input type="phone" placeholder="Enter Phone" maxlength="10" required>
     </div>
-    <br>
+
     <div>
-        <label for="email">Email</label>
+        <label for="Email">Email</label>
         <input type="email" placeholder="Enter Email" required>
     </div>
-    <br>
+    
     <div>
-        <label for="password">Password</label>
+        <label for="Password">Password</label>
         <input type="password" placeholder="Enter password" required>
     </div>
-    <br>
+    
     <div>
         <label for="dob">Date of birth</label>
         <input id="dob" type="Date" required>
     </div>
-    <br>
+    
     <div>
         <label for="gender">Gender</label>
         <select id="gender" required>
@@ -46,19 +44,14 @@
             <option value="other">other</option>
         </select>
     </div>
-    <br>
-    <div>
-        <p>Subscription Plan</p>
-        <input id="basic" type="radio" name="subscription" value="basic">
-        <label for="basic">Basic</label>
+    
+     <p>Subscription Plan</p>
+<div class="subscription-options">
+    <label><input id="basic" type="radio" name="subscription" value="basic"> Basic</label>
+    <label><input id="standard" type="radio" name="subscription" value="standard"> Standard</label>
+    <label><input id="premium" type="radio" name="subscription" value="premium"> Premium</label>
+</div>
 
-        <input id="standard" type="radio" name="subscription" value="standard">
-        <label for="standard">Standard</label>
-
-        <input id="premium" type="radio" name="subscription" value="premium">
-        <label for="premium">Premium</label>
-    </div>
-    <br>
     <br>
     <div>
         <button type="submit">Register</button>
